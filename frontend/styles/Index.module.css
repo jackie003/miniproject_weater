@@ -1,0 +1,72 @@
+
+.title {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.list {
+    display: flex;
+    margin: 10px;
+}
+
+.listItem {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width:auto;
+    align-items: center;
+    margin: 10px;
+    border: 2px solid #777;
+    padding: 2rem;
+    border-radius: 5px;
+}
+.listItem > div{
+    margin: 5px 0px;
+}
+
+.btn {
+    background-color: transparent;
+    color: #777;
+    font-size: 1rem;
+    margin-top: 10px;
+    border: 2px solid rgb(102, 102, 255);
+}
+.btn:hover{
+    background-color: burlywood;
+    color: #fff;
+    font-size: 1rem;
+    margin-top: 10px;
+    border: 2px solid rgb(137, 137, 255);
+}
+
+
+
+.navbar {
+  width: 100%;
+  background-color: #555;
+  overflow: auto;
+}
+
+.navbar a {
+  float: middle;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar a:hover {
+  background-color: rgb(226, 31, 31);
+}
+
+.active {
+  background-color: #4CAF50;
+}
+
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}

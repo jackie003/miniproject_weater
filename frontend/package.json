@@ -4,16 +4,40 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
+    "build": "next build && next export",
+    "start": "next start",
+    "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && rm -rf .next/ && npm install && npm run dev"
   },
+  "keywords": [
+    "next",
+    "nextjs",
+    "react",
+    "reactjs",
+    "npx",
+    "material",
+    "material-design",
+    "material-kit",
+    "material-kit-react",
+    "next-material-kit"
+  ],
   "dependencies": {
+    "@material-ui/core": "^4.11.3",
+    "@material-ui/icons": "^4.11.2",
+    "@zeit/next-sass": "^1.0.1",
     "axios": "^0.21.1",
     "js-cookie": "^2.2.1",
+    "moment": "^2.29.1",
     "next": "10.0.9",
+    "next-compose-plugins": "^2.2.1",
+    "next-images": "^1.7.0",
+    "nouislider": "^14.7.0",
     "react": "17.0.1",
+    "react-datetime": "^3.0.4",
     "react-dom": "17.0.1",
+    "react-slick": "^0.28.1",
+    "react-swipeable-views": "^0.13.9",
     "scss": "^0.2.4",
-    "swr": "^0.5.5"
+    "swr": "^0.5.5",
+    "webpack": "4.43.0"
   }
 }

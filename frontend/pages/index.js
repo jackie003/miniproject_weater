@@ -1,22 +1,25 @@
 import Head from 'next/head' 
 import Layout from '../components/layout' 
 import Navbar from '../components/navbar'
-import styles from '../styles/Home.module.css'
-
+import React from "react";
+import Header from "components/Header/Header.js";
+import HeaderLinks from "components/Header/HeaderLinks.js";
 
 export default function Home({ token }) {
  
   return (
-    <Layout>
-    <Head>
-        <title>First Page</title>
-    </Head>
-    <div className={styles.container}>
-        <Navbar />
-        <h1>Home page</h1>
-        No login required!
+    <div>
+       <Header
+        rightLinks={<HeaderLinks />}
+        fixed
+        color="transparent"
+        changeColorOnScroll={{
+          height: 400,
+          color: "white"
+        }}
+        {...rest}
+      />
     </div>
-</Layout>
   )
 }
 

@@ -12,7 +12,7 @@ import GridContainer from "./Grid/GridContainer.js";
 import GridItem from "./Grid/GridItem.js";
 import CustomInput from "./CustomInput/CustomInput.js";
 import CustomDropdown from "./CustomDropdown/CustomDropdown.js";
-//import image from "./te.jpg";
+import image from "./te.jpg";
 
 const classes = makeStyles(styles);
 
@@ -22,18 +22,20 @@ export default function Navbar() {
       <div className={classes.container}>
 
       <div className={classes.navigation}>
-        <div id="navbar" className={classes.navbar}>
+        <div className={classes.navbar}>
         <div
           className={classes.navigation}
-         // style={{ backgroundImage: "url(" + image + ")" }}
+          style={{ backgroundImage: "url(" + image + ")" }}
         >
         <Header
-            brand="Navbar with profile"
+             href="./index"
+            brand="Box Office"
+           
             rightLinks={
               <List className={classes.list}>
                 
-                <ListItem className={classes.listItem}>
-                <Link href="./register">
+               
+                <Link href="./admin">
                   <Button        
                     className={classes.navLink}
                     color="transparent"
@@ -41,28 +43,35 @@ export default function Navbar() {
                     Discover
                   </Button>
                     </Link>
-                </ListItem>      
-                <ListItem className={classes.listItem}>
+                    <Link href="./register">
                   <Button
                     href="#pablo"
                     className={classes.navLink}
-                    onClick={e => e.preventDefault()}
                     color="transparent"
                   >
                     Wishlist
                   </Button>
-                </ListItem>
-                <ListItem className={classes.listItem}>
+                  </Link>
+                  <Link href="./login">
                   <Button
                     href="#pablo"
                     className={classes.registerNavLink}
-                    onClick={e => e.preventDefault()}
+                    color="rose"
+                    round
+                  >
+                    Login
+                  </Button>
+                  </Link>
+                  <Link href="./register">
+                  <Button
+                    href="#pablo"
+                    className={classes.registerNavLink}
                     color="rose"
                     round
                   >
                     Register
                   </Button>
-                </ListItem>
+                  </Link>
               </List>
             }
           />

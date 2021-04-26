@@ -15,8 +15,8 @@ import DeleteIcon from "@material-ui/icons/Delete";
 import IconButton from "@material-ui/core/IconButton";
 
 // core components
-import CustomDropdown from "components/CustomDropdown/CustomDropdown.js";
-import Button from "/CustomButtons/Button.js";
+import CustomDropdown from "./CustomDropdown/CustomDropdown.js";
+import Button from "./CustomButtons/Button.js";
 
 import styles from "./headerLinksStyle.js";
 

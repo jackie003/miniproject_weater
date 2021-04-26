@@ -33,5 +33,12 @@
     box-sizing: border-box;
     font-size: 1.2rem;
 }
+.bg {
+    background-size: 30px;
+    background: url('../assets/img/te.jpg') no-repeat;
+    float: left;
+    height: 50px;
+    width: 30px;
+}
 
 

@@ -4,20 +4,20 @@ import styles from "../styles/Pet.module.css";
 import Link from "next/link";
 import withAuth from "../components/withAuth";
 import Navbar from "../components/navbar";
-const URL = "http://localhost/api/movie";
+const URL = "http://localhost/api/pets";
 const URL_IN = "http://localhost/api/income";
-const admin = ({ token }) => {
+const admin = ({ token  , props}) => {
   const [user, setUser] = useState({});
-
-  const [movie, setmovie] = useState({});
+  const { ...rest } = props;
+  const [pets, setPets] = useState({});
   const [income, setIncome] = useState();
   const [type, setType] = useState("");
-  const [imdb, setImdb] = useState();
-  const [worldwide_gross, setworldwide_gross] = useState();
-  const [storyline, setstoryline] = useState();
+  const [age, setAge] = useState();
+  const [weight, setWeight] = useState();
+  const [price, setPrice] = useState();
   const [pet, setPet] = useState({});
   useEffect(() => {
-    getmovie();
+    getPets();
     getIncome();
     profileUser();
   }, []);
@@ -44,53 +44,48 @@ const admin = ({ token }) => {
     setIncome(result.data);
   };
 
-  const getmovie = async () => {
+  const getPets = async () => {
     let result = await axios.get(URL);
-    setmovie(result.data.list);
-  };
-  const getproile = async () => {
-    let result = await axios.get(URL);
-    <Link href="/profile"><a> Login </a></Link>;
+    setPets(result.data.list);
   };
 
   const addPet = async () => {
     let result = await axios.post(URL, {
       type,
-      imdb,
-      worldwide_gross,
-      storyline,
+      age,
+      weight,
+      price,
     });
     console.log(result);
-    getmovie();
+    getPets();
   };
 
   const deletePet = async (id) => {
     let result = await axios.delete(`${URL}/${id}`);
-    getmovie();
+    getPets();
   };
 
   const updatePet = async (id) => {
     let result = await axios.put(`${URL}/${id}`, {
       type,
-      imdb,
-      worldwide_gross,
-      storyline,
+      age,
+      weight,
+      price,
     });
     console.log(result);
-    getmovie();
+    getPets();
   };
 
-  const showmovie = () => {
-    if (movie && movie.length) {
-      return movie.map((item, index) => {
+  const showPets = () => {
+    if (pets && pets.length) {
+      return pets.map((item, index) => {
         return (
           <div className={styles.listItem} key={index}>
-            <b>Type :</b> {item.type} 
-            <b>Imdb :</b> {item.imdb} <br />
-            <b>worldwide_gross :</b> {item.worldwide_gross} <br />
-             <b>storyline :</b> {item.storyline} <br />
-
-              <div className={styles.edit_button}>
+            <b>Price :</b> {item.price} <br />
+            <b>Weight :</b> {item.weight} <br />
+            <b>Age :</b> {item.age} <br />
+            <b>Type :</b> {item.type}
+            <div className={styles.edit_button}>
               <button
                 className={styles.button_get}
                 onClick={() => getPetById(item.id)}
@@ -119,17 +114,11 @@ const admin = ({ token }) => {
   };
   return (
     <div className={styles.container}>
-      
-      <h1 className={styles.header}>PET SHOP</h1>
-      <button
-          className={styles.w3button}
-        
-          onClick={() => <Link href="/profile"></Link>}
-        >
-         <Link href="/profile"><a> profile </a></Link>
-        </button>
+      <Navbar />
+      <h1>PET SHOP</h1>
+      <h3>Income : {income}</h3>
       <div className={styles.form_add}>
-        <h2>Add movie</h2>
+        <h2>Add Pets</h2>
         Type:
         <input
           type="text"
@@ -142,27 +131,27 @@ const admin = ({ token }) => {
           name="age"
           onChange={(e) => setAge(e.target.value)}
         ></input>
-        worldwide_gross:
+        Weight:
         <input
           type="number"
-          name="worldwide_gross"
-          onChange={(e) => setworldwide_gross(e.target.value)}
+          name="weight"
+          onChange={(e) => setWeight(e.target.value)}
         ></input>
-        storyline:
+        Price:
         <input
           type="number"
-          name="storyline"
-          onChange={(e) => setstoryline(e.target.value)}
+          name="price"
+          onChange={(e) => setPrice(e.target.value)}
         ></input>
         <button
           className={styles.button_add}
-          onClick={() => addPet(type, age, worldwide_gross, storyline)}
+          onClick={() => addPet(type, age, weight, price)}
         >
           Add
         </button>
       </div>
 
-      <div className={styles.list}>{showmovie()}</div>
+      <div className={styles.list}>{showPets()}</div>
     </div>
   );
 };

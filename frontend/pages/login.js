@@ -72,10 +72,11 @@ export default function Login({ token }) {
       <Head>
         <title>Login</title>
       </Head>
-      <div className={styles.container}>
+      <div>
         <Navbar />
+        <div className={styles.container}>
         <h1>Login</h1>
-        <div>
+        <div >
           <b>Token:</b> {token.substring(0, 15)}...
           <button onClick={copyText}> Copy token </button>
         </div>
@@ -85,6 +86,7 @@ export default function Login({ token }) {
         {loginForm()}
         <div>
           <button onClick={login}>Login</button>
+        </div>
         </div>
       </div>
     </Layout>

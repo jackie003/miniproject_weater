@@ -1,25 +1,47 @@
 import Head from 'next/head' 
 import Layout from '../components/layout' 
 import Navbar from '../components/navbar'
-import React from "react";
-import Header from "components/Header/Header.js";
-import HeaderLinks from "components/Header/HeaderLinks.js";
+import Footer from '../components/Footer/Footer.js';
+import Header from '../components/Header.js';
+import Parallax from '../components/Parallax/Parallax.js';
+import styles from '../styles/Home.module.css'
+import classNames from "classnames";
+import React, { Component } from "react";
+import Router from "next/router";
+import { makeStyles } from "@material-ui/core/styles";
+const useStyles = makeStyles(styles);
 
 export default function Home({ token }) {
- 
+  const classes = useStyles();
   return (
-    <div>
-       <Header
-        rightLinks={<HeaderLinks />}
-        fixed
-        color="transparent"
-        changeColorOnScroll={{
-          height: 400,
-          color: "white"
-        }}
-        {...rest}
-      />
+    <Layout>
+    <Header />
+        <title>First Page</title>
+    <div >
+        <Navbar />
+
+        <Parallax image={require('../assets/img/te.jpg')}>
+        <div className={classes.container}>
+          <GridContainer>
+            <GridItem>
+              <div className={classes.brand}>
+                <h1 className={classes.title}>NextJS Material Kit.</h1>
+                <h3 className={classes.subtitle}>
+                  A Badass Material Kit based on Material-UI and NextJS.
+                </h3>
+              </div>
+            </GridItem>
+          </GridContainer>
+        </div>
+      </Parallax>
+
+        <div   className={classNames(classes.main, classes.mainRaised)}>
+        <h1>Home page</h1>
+        No login required!
+        </div>
     </div>
+    <Footer />
+</Layout>
   )
 }
 

@@ -1,20 +1,30 @@
-const path = require("path");
+const path = require('path');
 
 module.exports = {
-    entry: "./src/app.js",
-    output: {
-        path: path.join(__dirname, 'public'),
-        filename: 'bundle.js'
-    },
-    module:{
-        rules:[{
-            loader: 'babel-loader',
-            test: '/\.(js|jsx)$/',
-            exclude: /node_modules/
-        }]
-    },
-    devtool: 'cheap-module-eval-source-map',
-    devServer: {
-        contentBase: path.join(__dirname, 'public')
+    webpackConfig: {
+      module: {
+        rules: [
+          // Babel loader, will use your project’s .babelrc
+          {
+            test: /\.jsx?$/,
+            exclude: /node_modules/,
+            loader: 'babel-loader'
+          },
+          // Other loaders that are needed for your components
+          {
+            test: /\.css$/,
+            loader: 'style-loader!css-loader?modules'
+          },
+          {
+                  test: /\.(jpg|png|svg)$/,
+                  use: {
+                      loader: 'url-loader',
+                      options: {
+                          limit: 25000
+                      }
+                  }
+              }
+        ]
+      }
     }
-}
+  }

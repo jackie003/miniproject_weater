@@ -1,12 +1,11 @@
-const withPlugins = require("next-compose-plugins");
-const withImages = require("next-images");
-const withSass = require("@zeit/next-sass");
-const webpack = require("webpack");
-const path = require("path");
-
-module.exports = withPlugins([[withSass], [withImages]], {
-  webpack(config, options) {
-    config.resolve.modules.push(path.resolve("./"));
-    return config;
-  }
-});
+module.exports = {
+  webpack: (config, options) => {
+    config.module.rules.push(
+      {
+        test: /\.(jpe?g|png|gif|woff|woff2|eot|ttf|svg)(\?[a-z0-9=.]+)?$/,
+        loader: 'url-loader?limit=100000' 
+      }
+    )
+    return config
+  },
+}

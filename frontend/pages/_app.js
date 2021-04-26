@@ -1,4 +1,4 @@
-import '../styles/material-kit-react.css.map'
+import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />

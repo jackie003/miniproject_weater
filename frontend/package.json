@@ -25,6 +25,8 @@
     "@material-ui/icons": "^4.11.2",
     "@zeit/next-sass": "^1.0.1",
     "axios": "^0.21.1",
+    "babel-plugin-styled-components": "^1.12.0",
+    "classnames": "^2.3.1",
     "js-cookie": "^2.2.1",
     "moment": "^2.29.1",
     "next": "10.0.9",
@@ -34,10 +36,18 @@
     "react": "17.0.1",
     "react-datetime": "^3.0.4",
     "react-dom": "17.0.1",
+    "react-scroll-parallax": "^2.3.5",
     "react-slick": "^0.28.1",
     "react-swipeable-views": "^0.13.9",
     "scss": "^0.2.4",
     "swr": "^0.5.5",
+    "url-loader": "^4.1.1",
     "webpack": "4.43.0"
+  },
+  "devDependencies": {
+    "css-loader": "^5.2.4",
+    "node-sass": "^5.0.0",
+    "sass-loader": "^11.0.1",
+    "style-loader": "^2.0.0"
   }
 }

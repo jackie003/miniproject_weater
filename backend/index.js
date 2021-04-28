@@ -24,10 +24,10 @@ router.use(express.urlencoded({ extended: false }))
 
 let game_shops = {
     list: [
-        { id: 1, name: "PS4", price:999, date_sell:"Ems"  ,sell_by:99, imageurl:"https://gmedia.playstation.com/is/image/SIEPDC/ps4-slim-image-block-01-en-24jul20?$native--t$"},
-        { id: 2, name: "PS5", price:499, date_sell:"Ems"  ,sell_by:99, imageurl:"https://www.blognone.com/sites/default/files/externals/e4c669c3b53d08c0834ed8f590ad9122.jpg"},
-        { id: 3, name: "Xbox One", price:299, date_sell:"Ems"  ,sell_by:99, imageurl:"http://p.ipricegroup.com/uploaded_ea7827ae0957a100f2a81e27db51263c.jpg" },
-        { id: 4, name: "PS5 coll", price:799, date_sell:"Ems"  ,sell_by:99, imageurl:"https://images-na.ssl-images-amazon.com/images/I/61o7ai%2BYDoL._SL1441_.jpg"},
+        { id: 1, name: "PS4", price:300, date_sell:"27/04/2021"  ,sell_by:"John", imageurl:"https://gmedia.playstation.com/is/image/SIEPDC/ps4-slim-image-block-01-en-24jul20?$native--t$"},
+        { id: 2, name: "PS5", price:500, date_sell:"27/04/2021"  ,sell_by:"Mark", imageurl:"https://www.blognone.com/sites/default/files/externals/e4c669c3b53d08c0834ed8f590ad9122.jpg"},
+        { id: 3, name: "Xbox One", price:450, date_sell:"27/04/2021"  ,sell_by:"Emiri", imageurl:"http://p.ipricegroup.com/uploaded_ea7827ae0957a100f2a81e27db51263c.jpg" },
+        { id: 4, name: "PS5 coll", price:120, date_sell:"27/04/2021"  ,sell_by:"Jack", imageurl:"https://images-na.ssl-images-amazon.com/images/I/61o7ai%2BYDoL._SL1441_.jpg"},
 
     ]
     

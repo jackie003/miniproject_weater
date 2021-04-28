@@ -1,0 +1,115 @@
+.container {
+    min-height: 100vh;
+    padding: 0 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 40px solid #131212;
+    background-image : url("http://hd.wallpaperswide.com/thumbs/skins_collector_csgo-t2.jpg");
+  color: orangered;
+    
+  }
+ 
+  .list {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 10px;
+    padding: 1px;
+    flex-wrap: wrap;
+    width: 60vw;
+    border: 40px solid #c21a1a;
+    background-color: #2a2c2c;
+  }
+  .listA {
+    display: flex;
+    justify-content: center;
+    flex-direction: column ;
+    list-style: none;
+    margin: 5px;
+    padding: 1px;
+    flex-wrap: wrap;
+    width: 50vw;
+    border: 10px solid #c21a1a;
+    background-color: #2a2c2c;
+   
+  }
+  
+  .listItem {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    padding: 10px;
+    font-size: 1.4rem;
+    text-align: center;
+  }
+  
+  .btnup{
+    background-color: #363f3f;
+    border-radius: 10%;
+    border: none;
+    color: white;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+
+  .btnget{
+    background-color: #1d1915;
+    border-radius: 10%;
+    border: none;
+    color: white;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+
+  .btndelete{
+    background-color: #221913;
+    border-radius: 10%;
+    border: none;
+    color: white;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+
+  .btnadd{
+    background-color: #44413f;
+    border: none;
+    color: white;
+    padding: 5px 5px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    margin-top: 15px;
+  }
+
+  .btnadd{
+      display: flex;
+      flex-direction: column;
+      margin: 20px;
+      padding: 20px;
+      border: 15px solid #24211b;
+      font-size: 1.4rem;
+      text-align: center;
+      
+  }
+
+  .box{
+    background-color: white;
+    }
+  

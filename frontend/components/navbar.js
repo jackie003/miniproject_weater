@@ -1,85 +1,70 @@
-import Link from 'next/link'
-import React from "react";
-import Header from "./Header.js";
-import List from "@material-ui/core/List";
-import { makeStyles } from "@material-ui/core/styles";
-import ListItem from "@material-ui/core/ListItem";
-import Email from "@material-ui/icons/Email";
-import Face from "@material-ui/icons/Face";
-import Button from "./Button.js";
-import styles from "./navbarsStyle.js";
-import GridContainer from "./Grid/GridContainer.js";
-import GridItem from "./Grid/GridItem.js";
-import CustomInput from "./CustomInput/CustomInput.js";
-import CustomDropdown from "./CustomDropdown/CustomDropdown.js";
-import image from "./te.jpg";
+import Link from "next/link";
 
-const classes = makeStyles(styles);
-
-export default function Navbar() {
+const Navbar = () => {
   return (
-    <div className={classes.section} >
-      <div className={classes.container}>
-
-      <div className={classes.navigation}>
-        <div className={classes.navbar}>
-        <div
-          className={classes.navigation}
-          style={{ backgroundImage: "url(" + image + ")" }}
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div className="container-fluid">
+        <Link href="/">
+          <a className="navbar-brand">GameStore</a>
+        </Link>
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
         >
-        <Header
-             href="./index"
-            brand="Box Office"
-           
-            rightLinks={
-              <List className={classes.list}>
-                
-               
-                <Link href="./admin">
-                  <Button        
-                    className={classes.navLink}
-                    color="transparent"
-                  >
-                    Discover
-                  </Button>
-                    </Link>
-                    <Link href="./register">
-                  <Button
-                    href="#pablo"
-                    className={classes.navLink}
-                    color="transparent"
-                  >
-                    Wishlist
-                  </Button>
-                  </Link>
-                  <Link href="./login">
-                  <Button
-                    href="#pablo"
-                    className={classes.registerNavLink}
-                    color="rose"
-                    round
-                  >
-                    Login
-                  </Button>
-                  </Link>
-                  <Link href="./register">
-                  <Button
-                    href="#pablo"
-                    className={classes.registerNavLink}
-                    color="rose"
-                    round
-                  >
-                    Register
-                  </Button>
-                  </Link>
-              </List>
-            }
-          />
-           </div>
-          </div>
-          </div>
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarResponsive">
+          <ul className="navbar-nav ml-auto">
+            <li className="nav-item">
+              <Link href="/store">
+                <a className="nav-link">Store</a>
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link href="/inbox">
+                <a className="nav-link">Inbox</a>
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link href="/admin">
+                <a className="nav-link">Manage</a>
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link href="/about">
+                <a className="nav-link">About</a>
+              </Link>
+            </li>
+		      <li className="nav-item">
+              <Link href="/help">
+                <a className="nav-link">Help</a>
+              </Link>
+              </li>
+              <li className="nav-item">
+	      	<Link href="/register">
+                <a className="nav-link">Register</a>
+              </Link>
+              </li>
+              <li className="nav-item">
+		      <Link href="/login">
+                <a className="nav-link">Login</a>
+              </Link>
+              </li>
+              <li className="nav-item">
+	      	<Link href="/logout">
+                <a className="nav-link">Logout</a>
+              </Link>
+            </li>
+          </ul>
         </div>
-        </div>
-    
-)
-          }
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;
